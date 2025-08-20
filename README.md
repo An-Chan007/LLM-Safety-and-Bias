@@ -52,14 +52,11 @@ LLM Bias and Safety Evaluation/
 │   ├── mitigation strategy 2.py               # LLM-as-Judge mitigation
 │   ├── improved_bias_analyzer.py              # Baseline analysis & visualization
 │   ├── mitigation_bias_analyzer.py            # Mitigation analysis
-│   ├── enhanced_mitigation_bias_analyzer.py   # Advanced mitigation analysis
 │   ├── bias_pattern_analyzer.py               # Pattern recognition analysis
 │   └── requirements.txt                       # Dependencies
 │
 ├── Data/                                   # Scenarios and test data
 │   ├── sample_scenarios.jsonl                 # Core ethical scenarios
-│   ├── ethical_scenarios.jsonl                # Additional test cases
-│   └── test_texts.csv                         # Sample evaluation data
 │
 ├── LLMs Responses/                         # Baseline model outputs
 │   ├── baseline_phi35.csv
@@ -73,7 +70,6 @@ LLM Bias and Safety Evaluation/
 │
 ├── Comparison Graphs/                      # Baseline analysis visualizations
 ├── Mitigation Analysis Graphs/             # Mitigation analysis charts
-├── Enhanced Mitigation Analysis Graphs/    # Advanced analysis results
 ├── Detailed Scenario Analysis/             # Scenario-specific analysis
 └── Final Report pdf/                       # Research documentation
 ```
