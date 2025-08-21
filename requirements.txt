@@ -1,0 +1,15 @@
+transformers>=4.40
+datasets>=2.19
+evaluate>=0.4
+accelerate>=0.27
+sentencepiece         # tokenizers for many HF models
+openai                # if you plan to hit GPT-4
+tiktoken              # GPT-4 token counting
+aif360                # IBM fairness toolkit
+fairlearn             # MS fairness toolkit
+pandas
+numpy
+tqdm
+matplotlib
+seaborn
+ipykernel             # if you'll keep using notebooks
