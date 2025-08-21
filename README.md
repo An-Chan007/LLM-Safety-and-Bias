@@ -1,6 +1,6 @@
 # LLM Bias and Safety Evaluation Framework
 
-This is a README file for baseline assessment and two advanced mitigation strategies, with extensive visualization and analysis capabilities.
+A comprehensive research framework for evaluating bias, toxicity, and safety risks in Large Language Models across healthcare, workplace, and smart city scenarios, featuring advanced analysis, visualization, and reporting capabilities.
 
 ## Project Overview
 
@@ -47,12 +47,11 @@ This framework provides end-to-end evaluation of LLM bias and safety through:
 ```
 LLM Bias and Safety Evaluation/
 ├── src/                                    # Core implementation
-│   ├── baseline_results.py                    # Baseline bias assessment
-│   ├── mitigation strategy 1.py               # Prompt engineering mitigation
-│   ├── mitigation strategy 2.py               # LLM-as-Judge mitigation
-│   ├── improved_bias_analyzer.py              # Baseline analysis & visualization
+│   ├── baseline_results.ipynb                 # Baseline bias assessment (Jupyter)
+│   ├── mitigation strategy 1.ipynb            # Prompt engineering mitigation (Jupyter)
+│   ├── mitigation strategy 2.ipynb            # LLM-as-Judge mitigation (Jupyter)
+│   ├── bias_analyzer_graph.py                 # Comprehensive 9-graph analysis
 │   ├── mitigation_bias_analyzer.py            # Mitigation analysis
-│   ├── bias_pattern_analyzer.py               # Pattern recognition analysis
 │   └── requirements.txt                       # Dependencies
 │
 ├── Data/                                   # Scenarios and test data
@@ -68,9 +67,9 @@ LLM Bias and Safety Evaluation/
 │   ├── mitig_prompt_aligned_norefuse_*.csv     # Strategy 1 results
 │   └── mitig_judge_*.csv                       # Strategy 2 results
 │
+├── Comprehensive Analysis Graphs/          # Complete 9-graph analysis output
 ├── Comparison Graphs/                      # Baseline analysis visualizations
 ├── Mitigation Analysis Graphs/             # Mitigation analysis charts
-├── Detailed Scenario Analysis/             # Scenario-specific analysis
 └── Final Report pdf/                       # Research documentation
 ```
 
@@ -122,38 +121,42 @@ cd "Main LLM SAFETY"
 
 #### Step 1: Configure Model and Run Baseline
 ```python
-# Edit configuration in baseline_results.py
+# Edit configuration in baseline_results.ipynb (Google Colab)
 MODEL_ID = "microsoft/Phi-3.5-mini-instruct"  # Choose your model
 MODEL_KEY = "phi35"
 MAX_NEW_TOKENS = 120
 
-# Run baseline assessment
-python src/baseline_results.py
+# Run baseline assessment notebook
+# Execute all cells in baseline_results.ipynb
 ```
 
-#### Step 2: Generate Baseline Analysis
+#### Step 2: Generate Comprehensive Analysis
 ```python
-# Run comprehensive baseline analysis
-python src/improved_bias_analyzer.py
+# Run comprehensive 9-graph analysis
+python src/bias_analyzer_graph.py
 ```
 
-**Generated Outputs:**
+**Generated Outputs (9 Comprehensive Graphs):**
 - Age bias analysis charts
 - Racial bias distribution
 - Gender bias patterns
-- Similarity score evaluations
+- Score comparisons (similarity and toxicity)
 - Overall model rankings
+- Healthcare detailed analysis
+- Workplace detailed analysis
+- Moral dilemma analysis
+- Comprehensive scenario ranking
 
 ### Phase 2: Mitigation Implementation
 
 #### Strategy 1: Prompt Engineering
 ```python
-# Configure and run prompt engineering mitigation
+# Configure and run prompt engineering mitigation in Google Colab
 TARGET_MODEL_ID = "microsoft/Phi-3.5-mini-instruct"
 MODEL_KEY = "phi35"
 
-# Execute mitigation
-python "src/mitigation strategy 1.py"
+# Execute mitigation notebook
+# Execute all cells in "mitigation strategy 1.ipynb"
 ```
 
 **Key Features:**
@@ -164,12 +167,12 @@ python "src/mitigation strategy 1.py"
 
 #### Strategy 2: LLM-as-Judge
 ```python
-# Configure and run LLM-as-Judge mitigation
+# Configure and run LLM-as-Judge mitigation in Google Colab
 TARGET_MODEL_ID = "microsoft/Phi-3.5-mini-instruct"
 MODEL_KEY = "phi35"
 
-# Execute mitigation
-python "src/mitigation strategy 2.py"
+# Execute mitigation notebook
+# Execute all cells in "mitigation strategy 2.ipynb"
 ```
 
 **Pipeline Phases:**
@@ -180,44 +183,52 @@ python "src/mitigation strategy 2.py"
 
 ### Phase 3: Comprehensive Analysis
 
-#### Basic Mitigation Analysis
+#### Complete 9-Graph Analysis
 ```python
-# Run standard mitigation analysis
+# Run comprehensive analysis for all scenarios and models
+python src/bias_analyzer_graph.py
+```
+
+**Generated Analysis:**
+1. Age Bias Analysis (young vs old preferences)
+2. Racial Bias Analysis (racial preference patterns)
+3. Gender Bias Analysis (gender preference patterns)
+4. Score Comparisons (similarity and toxicity)
+5. Overall Model Ranking (comprehensive performance)
+6. Healthcare Detailed Analysis (medical scenario bias)
+7. Workplace Detailed Analysis (employment bias patterns)
+8. Moral Dilemma Analysis (ethical decision-making)
+9. Comprehensive Scenario Ranking (all scenarios ranked)
+
+#### Mitigation-Specific Analysis
+```python
+# Run mitigation strategy analysis
 python src/mitigation_bias_analyzer.py
-```
-
-#### Advanced Analysis
-```python
-# Run enhanced mitigation analysis
-python src/enhanced_mitigation_bias_analyzer.py
-```
-
-#### Pattern Recognition Analysis
-```python
-# Run deep pattern analysis
-python src/bias_pattern_analyzer.py
 ```
 
 ## Analysis Outputs
 
-### Baseline Analysis Results
-- **Age Bias Charts**: Young vs old preference patterns
-- **Racial Bias Heatmaps**: White vs other race preferences
-- **Gender Bias Analysis**: Male vs female selection patterns
-- **Similarity Scores**: Response quality measurements
-- **Model Rankings**: Comprehensive performance comparison
+### Comprehensive 9-Graph Analysis Results
+- **Graph 1**: Age Bias Analysis (4 subplots: model comparison, domain comparison, heatmap, ranking)
+- **Graph 2**: Racial Bias Analysis (4 subplots: model comparison, domain comparison, heatmap, ranking)
+- **Graph 3**: Gender Bias Analysis (4 subplots: model comparison, domain comparison, heatmap, ranking)
+- **Graph 4**: Score Comparisons (4 subplots: similarity by domain, toxicity by domain, similarity ranking, toxicity ranking)
+- **Graph 5**: Overall Model Ranking (4 subplots: bias breakdown, similarity vs toxicity, bias ranking, summary table)
+- **Graph 6**: Healthcare Detailed Analysis (6 subplots: bias by scenario, similarity scores, problematic scenarios, age/race bias, model performance)
+- **Graph 7**: Workplace Detailed Analysis (6 subplots: bias by scenario, similarity scores, problematic scenarios, gender/age bias, model performance)
+- **Graph 8**: Moral Dilemma Analysis (4 subplots: bias by model, similarity by model, age preferences)
+- **Graph 9**: Comprehensive Scenario Ranking (4 subplots: scenario ranking, similarity ranking, heatmap, overall performance)
 
 ### Mitigation Analysis Results
-- **Strategy Effectiveness**: Before/after bias reduction
-- **Cross-Model Comparison**: Performance across all models
-- **Domain-Specific Analysis**: Healthcare, workplace, smart city
+- **Strategy Effectiveness**: Before/after bias reduction comparison
+- **Cross-Model Comparison**: Performance across all 4 models
+- **Domain-Specific Analysis**: Healthcare, workplace, smart city breakdowns
 - **Scenario Breakdown**: Detailed per-scenario analysis
-- **Excel Exports**: Comprehensive data tables
 
 ### Advanced Analysis Features
 - **Statistical Significance Testing**
-- **Correlation Analysis**
-- **Pattern Recognition**
+- **Multi-dimensional Bias Analysis**
+- **Pattern Recognition across Domains**
 - **Publication-Ready Visualizations**
 
 ## Configuration Options
@@ -247,11 +258,23 @@ DOMAINS = {
 ```python
 # Output directories (customize as needed)
 OUTPUT_DIRS = {
+    'comprehensive': "Comprehensive Analysis Graphs/",
     'baseline': "Comparison Graphs/",
-    'mitigation': "Mitigation Analysis Graphs/", 
-    'enhanced': "Enhanced Mitigation Analysis Graphs/",
-    'detailed': "Detailed Scenario Analysis/"
+    'mitigation': "Mitigation Analysis Graphs/"
 }
+
+# Comprehensive analysis generates 9 graphs:
+GRAPH_OUTPUTS = [
+    'age_bias_analysis.png',
+    'racial_bias_analysis.png', 
+    'gender_bias_analysis.png',
+    'score_comparisons.png',
+    'overall_model_ranking.png',
+    'healthcare_detailed_analysis.png',
+    'workplace_detailed_analysis.png',
+    'moral_dilemma_analysis.png',
+    'comprehensive_scenario_ranking.png'
+]
 ```
 
 ## Key Metrics
@@ -313,24 +336,18 @@ OUTPUT_DIRS = {
 
 ### Complete Evaluation Pipeline
 ```bash
-# 1. Run baseline for all models
-for model in phi35 mistral-7b qwen2.5-7b falcon-7b; do
-    # Configure MODEL_ID and MODEL_KEY in baseline_results.py
-    python src/baseline_results.py
-done
+# 1. Run baseline for all models (Google Colab Pro)
+# Execute baseline_results.ipynb for each model:
+# - Configure MODEL_ID and MODEL_KEY
+# - Run all cells for phi35, mistral-7b, qwen2.5-7b, falcon-7b
 
-# 2. Run mitigation strategies
-for model in phi35 mistral-7b qwen2.5-7b falcon-7b; do
-    # Configure model in mitigation strategy files
-    python "src/mitigation strategy 1.py"
-    python "src/mitigation strategy 2.py"  
-done
+# 2. Run mitigation strategies (Google Colab Pro)
+# Execute mitigation strategy 1.ipynb for each model
+# Execute mitigation strategy 2.ipynb for each model
 
-# 3. Generate comprehensive analysis
-python src/improved_bias_analyzer.py           # Baseline analysis
-python src/mitigation_bias_analyzer.py         # Mitigation analysis  
-python src/enhanced_mitigation_bias_analyzer.py # Advanced analysis
-python src/bias_pattern_analyzer.py            # Pattern analysis
+# 3. Generate comprehensive analysis (Local/Cursor)
+python src/bias_analyzer_graph.py             # Complete 9-graph analysis
+python src/mitigation_bias_analyzer.py         # Mitigation analysis
 ```
 
 ## Troubleshooting
